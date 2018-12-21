@@ -80,6 +80,8 @@ export default {
                 pages[page].push(item)
             }
         )
+        console.log(pages);
+        
         return pages;
     }
 	}
@@ -90,8 +92,9 @@ export default {
 <style lang="stylus" scoped>
     @import '~styles/varibles.styl'
     @import '~styles/mixins.styl'
+    
     .home-icons
-        height  60vw
+        height  55vw
         width 100%
         .icon
             position relative
