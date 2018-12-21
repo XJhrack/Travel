@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+     @import '~styles/mixins.styl'
     .like
         background #eee
         height .8rem
@@ -72,6 +73,7 @@ export default {
             .item-title
                 line-height .5rem
                 font-size .32rem
+                ellipsis()
             .item-evaluate
                 line-height .6rem
                 .item-star
