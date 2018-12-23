@@ -6,41 +6,30 @@
         </div>
         <div>
             <ul>
-                <li class="item">
-                    <img class="item-img" src="http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_200x200_2f08733b.jpg" alt="">
+                <li class="item" v-for="item in likeList" :key="item.id">
+                    <img class="item-img" :src="item.imgUrl" alt="">
                     
                     <div class="item-info">
-                        <div class="item-title">长隆野生动物世界</div>
+                        <div class="item-title">{{item.title}}</div>
                         <div class="item-evaluate">
                             <div class="iconfont item-star">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</div>
-                            <sapn class="evaluate-number">86289条评论</sapn>
+                            <span class="evaluate-number">{{item.evaluateNumber}}</span>
                         </div>
-                        <div class="item-price">￥209</div>
+                        <div class="item-price">{{item.price}}</div>
                     </div>
                 </li>
 
-
-                <li class="item">
-                    <img class="item-img" src="http://img1.qunarzz.com/sight/p0/201403/07/30b534b0de51ccac2906bcb6ba159988.jpg_200x200_2f08733b.jpg" alt="">
-                    
-                    <div class="item-info">
-                        <div class="item-title">长隆野生动物世界</div>
-                        <div class="item-evaluate">
-                            <div class="iconfont item-star">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</div>
-                            <span class="evaluate-number">86289条评论</span></div>
-                        <div class="item-price">￥209</div>
-                    </div>
-                </li>
             </ul>
         </div>
     </div>
 </template>
-
 <script>
 export default {
-    
+    name:'HomeLike',
+    props:['likeList']
 }
 </script>
+
 
 <style lang="stylus" scoped>
      @import '~styles/mixins.styl'

@@ -5,28 +5,12 @@
         </div>
         <div>
             <ul>
-                <li class="item">
-                    <img class="item-img" src="http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
+                <li class="item" v-for="item in weekendList" :key="item.id">
+                    <img class="item-img" :src="item.imgUrl">
                     
                     <div class="item-info">
-                        <div class="item-title">南国冰雪乐园</div>
-                        <div class="item-desc">这里可以让你在南国感受到北国风光，让南国的你“零距离”感受北国银装素裹壮观之景</div>
-                    </div>
-                </li>
-                <li class="item">
-                    <img class="item-img" src="http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
-                    
-                    <div class="item-info">
-                        <div class="item-title">南国冰雪乐园</div>
-                        <div class="item-desc">这里可以让你在南国感受到北国风光，让南国的你“零距离”感受北国银装素裹壮观之景</div>
-                    </div>
-                </li>
-                <li class="item">
-                    <img class="item-img" src="http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg" alt="">
-                    
-                    <div class="item-info">
-                        <div class="item-title">南国冰雪乐园</div>
-                        <div class="item-desc">这里可以让你在南国感受到北国风光，让南国的你“零距离”感受北国银装素裹壮观之景</div>
+                        <div class="item-title">{{item.title}}</div>
+                        <div class="item-desc">{{item.desc}}</div>
                     </div>
                 </li>
             </ul>
@@ -36,7 +20,8 @@
 
 <script>
 export default {
-    name:'HomeWeekend'
+    name:'HomeWeekend',
+    props:['weekendList']
 }
 </script>
 
