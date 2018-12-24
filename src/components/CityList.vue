@@ -105,7 +105,7 @@ export default {
                 color #212121
             .button-list
                 overflow hidden
-                padding-right .35rem
+                padding-right 5.5%
                 .button
                     display block
                     background #fff
@@ -115,7 +115,8 @@ export default {
                     line-height .88rem
                     text-align center
                     float left
-                    margin-left .06rem
+                    margin-left 0.5%
                     margin-top .06rem
+                    font-size .32rem
 
 </style>
