@@ -18,7 +18,7 @@
 	@import '~styles/varibles.styl'
 	.header
 		display: flex
-		line-height: .86rem
+		line-height: $headHight
 		background: #00bcd4
 		color:#fff
 		.header-left
