@@ -1,9 +1,9 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
-    <city-list :hotCities="hotCities" :cities="cities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-search :cities="cities"></city-search>
+    <city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
+    <city-alphabet :cities="cities" @letter="getLetter($event)"></city-alphabet>
   </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
   data () {
     return {
       cities:{},
-      hotCities:[]
+      hotCities:[],
+      letter:''
     }
   },
   methods:{
@@ -37,6 +38,9 @@ export default {
           vm.hotCities = response.data.data.hotCities
         }
       )
+    },
+    getLetter($event){
+      this.letter = $event
     }
   },
   mounted(){

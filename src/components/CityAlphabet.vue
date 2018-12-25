@@ -42,11 +42,9 @@ export default {
       },
       handleTouchMove($event){
           if(this.touchStatus){
-              console.log($event.touches[0]);
               const startY = document.querySelector('.A').offsetTop
               let clientY = $event.touches[0].clientY
               let index = Math.floor((clientY - startY)/22)
-            //   console.log(index);
               this.$emit('letter',this.arr[index])
           }
       },
