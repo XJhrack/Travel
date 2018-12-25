@@ -5,7 +5,7 @@
         </div>
         <div class="search-content" v-show="keyword">
             <ul>
-                <li class="search-item" v-for="item in list" :key="item.id">{{item.name}}</li>
+                <li class="search-item" @click="change(item.name)" v-for="item in list" :key="item.id">{{item.name}}</li>
             </ul>
             <div class="tip" v-show="tipshow">无法匹配到城市</div>
         </div>
@@ -24,6 +24,12 @@ export default {
         keyword:'',
         list : []
     }
+  },
+  methods:{
+      change(city){
+          this.$store.dispatch('changeCity',city)
+          this.$router.push('/')
+      }
   },
   computed:{
       tipshow(){

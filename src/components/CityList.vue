@@ -4,13 +4,13 @@
             <div class="area">
                 <div class="title">热门城市</div>
                 <div class="button-list">
-                    <div class="button" v-for="item in hotCities" :key="item.id">{{item.name}}</div>
+                    <div @click="change(item.name)" class="button" v-for="item in hotCities" :key="item.id">{{item.name}}</div>
                 </div>
             </div>
             <div class="area" :class="key" v-for="(item,key) in cities" :key="key">
                 <div class="title" >{{key}}</div>
                 <div class="button-list">
-                    <div class="button" v-for="value in item" :key="value.id">{{value.name}}</div>
+                    <div @click="change(value.name)" class="button" v-for="value in item" :key="value.id">{{value.name}}</div>
                 </div>
             </div>
         </div>
@@ -30,6 +30,12 @@ export default {
   },
   mounted:function(){
       this.scroll = new BScroll('.list')
+  },
+  methods:{
+      change(city){
+          this.$store.dispatch('changeCity',city)
+          this.$router.push('/')
+      }
   },
   watch:{
       letter:function(){
