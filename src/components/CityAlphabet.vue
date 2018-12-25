@@ -27,9 +27,7 @@ export default {
   computed:{
       arr:function(){
           const letters = []
-          console.log(this.cities);
           for(let item in this.cities){
-              console.log(item)
               letters.push(item)
           }
           return letters
