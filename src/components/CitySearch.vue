@@ -52,7 +52,7 @@ export default {
                 }
             )
           }
-            this.list = result
+          this.list = result
       }
   }
 }

@@ -8,7 +8,7 @@
             输入城市/景点/游玩主题
         </div>
         <router-link to="/city">
-			<div class="header-right">{{$store.state.city}}
+			<div class="header-right">{{currentCity}}
             	<span class="iconfont icon-xiala arrow-icon"></span>
         	</div>
 		</router-link>
@@ -39,7 +39,8 @@
 			border-radius: .1rem
 		.header-right
 			color #fff
-			width: 1.24rem
+			min-width: 1.24rem
+			padding 0 0.1rem
 			float: right
 			text-align: center
 			.arrow-icon
@@ -47,4 +48,12 @@
 
 </style>
 <script>
+import { mapState } from 'vuex'
+export default{
+	computed:{
+		...mapState({
+			currentCity:'city'
+		})
+	}
+}
 </script>

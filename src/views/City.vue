@@ -33,7 +33,6 @@ export default {
       const vm = this
       axios.get('/api/city.json').then(
         function(response){
-          // console.log(response.data.data);
           vm.cities = response.data.data.cities
           vm.hotCities = response.data.data.hotCities
         }
