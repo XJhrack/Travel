@@ -6,9 +6,8 @@
         </div>
         <div>
             <ul>
-                <li class="item" v-for="item in likeList" :key="item.id">
+                <router-link tag="li"  class="item" v-for="item in likeList" :key="item.id" :to="'/detail/'+item.id">
                     <img class="item-img" :src="item.imgUrl" alt="">
-                    
                     <div class="item-info">
                         <div class="item-title">{{item.title}}</div>
                         <div class="item-evaluate">
@@ -17,8 +16,7 @@
                         </div>
                         <div class="item-price">{{item.price}}</div>
                     </div>
-                </li>
-
+                </router-link>
             </ul>
         </div>
     </div>

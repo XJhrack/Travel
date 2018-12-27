@@ -18,6 +18,7 @@ export default {
     name: 'Home',
     data:function(){
         return {
+            lastCity:'',
             iconList : [],
             likeList : [],
             swiperList : [],
@@ -32,11 +33,13 @@ export default {
         HomeLike : HomeLike
     },
     methods:{
-        getHomeInfo:function(){
+        getHomeInfo:function(city){
             const vm = this;
-            axios.get('/api/index.json').then(function(response){
-                console.log(response);
-                //判断下是否成功请求，这里我就不写啦
+            axios.get('/api/index.json',{
+					    params: {
+					      city: city
+					    }
+					  }).then(function(response){
                 vm.iconList = response.data.data.iconList
                 vm.likeList = response.data.data.likeList
                 vm.swiperList = response.data.data.swiperList
@@ -46,6 +49,12 @@ export default {
     },
     mounted:function(){
         this.getHomeInfo();
+    },
+    activated(){
+        if(this.lastCity !== this.$store.state.city){
+            this.lastCity = this.$store.state.city
+            this.getHomeInfo(this.$store.state.city);
+        }
     }
 }
 </script>
